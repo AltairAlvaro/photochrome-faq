@@ -113,7 +113,7 @@ export default function Home() {
 
           {/* Hero Carousel */}
           <div className="relative w-full max-w-md mx-auto">
-            <div className="relative w-full h-[600px] overflow-hidden rounded-2xl shadow-2xl bg-[#E8D5C4]">
+            <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden rounded-2xl shadow-2xl bg-[#E8D5C4]">
               {/* Current Slide Only - Simple Conditional Rendering */}
               {heroMedia[currentSlide].type === "video" ? (
                 <video key={`video-${currentSlide}`} className="w-full h-full object-cover" autoPlay loop muted playsInline>
@@ -288,27 +288,27 @@ export default function Home() {
             </div>
 
             {/* Right Side - Pricing */}
-            <div className="p-8 md:p-12 flex flex-col justify-center">
+            <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
               {/* Price Table */}
-              <div className="bg-white rounded-xl shadow-md p-6 mb-8">
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  <div className="font-bold text-gray-900 text-center">PACKAGE</div>
-                  <div className="font-bold text-gray-900 text-center">PRICE</div>
+              <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+                <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="font-bold text-gray-900 text-center text-sm sm:text-base">PACKAGE</div>
+                  <div className="font-bold text-gray-900 text-center text-sm sm:text-base">PRICE</div>
                 </div>
-                <div className="space-y-3">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
                     <div className="text-gray-700">Unlimited 2 hours</div>
                     <div className="text-gray-900 font-semibold text-center">1.8 mio</div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
                     <div className="text-gray-700">Unlimited 3 hours</div>
                     <div className="text-gray-900 font-semibold text-center">2.0 mio</div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
                     <div className="text-gray-700">Unlimited 4 hours</div>
                     <div className="text-gray-900 font-semibold text-center">3.0 mio</div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
                     <div className="text-gray-700">Unlimited 5 hours</div>
                     <div className="text-gray-900 font-semibold text-center">4.0 mio</div>
                   </div>
@@ -317,59 +317,59 @@ export default function Home() {
 
               {/* Include Package */}
               <div className="mb-6">
-                <h3 className="font-bold text-gray-900 mb-4 text-lg">INCLUDE PACKAGE</h3>
-                <div className="grid md:grid-cols-2 gap-x-6 gap-y-2">
+                <h3 className="font-bold text-gray-900 mb-3 sm:mb-4 text-base sm:text-lg">INCLUDE PACKAGE</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2">
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Mesin cetak DNP (High Speed)</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Mesin cetak DNP (High Speed)</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Kualitas cetak foto yang tahan bertahun-tahun</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Kualitas cetak foto yang tahan bertahun-tahun</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Lighting studio</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Lighting studio</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Operator</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Operator</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Monitor touch screen 24'</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Monitor touch screen 24'</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Template custom</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Template custom</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Soft copy google drive</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Soft copy google drive</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Fun properties</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Fun properties</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Free gift boomerang</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Free gift boomerang</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Free QR code google drive</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Free QR code google drive</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Free frame</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Free frame</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Free transport Jakarta & Bekasi</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Free transport Jakarta & Bekasi</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1">•</span>
-                    <span className="text-sm text-gray-700">Free backdrop Maroon/Cream/Black</span>
+                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
+                    <span className="text-xs sm:text-sm text-gray-700">Free backdrop Maroon/Cream/Black</span>
                   </div>
                 </div>
               </div>
