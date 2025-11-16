@@ -237,15 +237,9 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-0">
-            {/* Left Side - Pricelist Carousel - HIDDEN */}
-            <div className="relative flex items-center justify-center p-8">
-              <div
-                className="relative overflow-hidden rounded-lg shadow-lg"
-                style={{
-                  width: `${VIDEO_CONFIG.pricelist.width}px`,
-                  height: `${VIDEO_CONFIG.pricelist.height}px`,
-                }}
-              >
+            {/* Left Side - Pricelist Carousel */}
+            <div className="relative flex items-center justify-center p-4 sm:p-6 md:p-8">
+              <div className="relative w-full max-w-[400px] overflow-hidden rounded-lg shadow-lg" style={{ aspectRatio: "4/3" }}>
                 {/* Carousel Slides */}
                 {pricelistMedia.map((item, index) => (
                   <div key={index} className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${index === pricelistSlide ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
@@ -261,25 +255,25 @@ export default function Home() {
                 ))}
 
                 {/* Navigation Buttons */}
-                <button onClick={prevPricelistSlide} className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2.5 shadow-lg z-20 transition-all hover:scale-110" aria-label="Previous slide">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onClick={prevPricelistSlide} className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 sm:p-2.5 shadow-lg z-20 transition-all hover:scale-110" aria-label="Previous slide">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
 
-                <button onClick={nextPricelistSlide} className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2.5 shadow-lg z-20 transition-all hover:scale-110" aria-label="Next slide">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button onClick={nextPricelistSlide} className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-2 sm:p-2.5 shadow-lg z-20 transition-all hover:scale-110" aria-label="Next slide">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
 
                 {/* Indicators */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-20">
                   {pricelistMedia.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setPricelistSlide(index)}
-                      className={`w-2 h-2 rounded-full transition-all ${index === pricelistSlide ? "bg-white w-6" : "bg-white/60 hover:bg-white/80"}`}
+                      className={`w-2 h-2 rounded-full transition-all ${index === pricelistSlide ? "bg-white w-5 sm:w-6" : "bg-white/60 hover:bg-white/80"}`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
@@ -288,99 +282,99 @@ export default function Home() {
             </div>
 
             {/* Right Side - Pricing */}
-            <div className="p-6 sm:p-8 md:p-12 flex flex-col justify-center">
+            <div className="p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center">
               {/* Price Table */}
-              <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
-                <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-3 sm:mb-4">
-                  <div className="font-bold text-gray-900 text-center text-sm sm:text-base">PACKAGE</div>
-                  <div className="font-bold text-gray-900 text-center text-sm sm:text-base">PRICE</div>
+              <div className="bg-white rounded-xl shadow-md p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8 overflow-x-auto">
+                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3 md:mb-4 min-w-[240px]">
+                  <div className="font-bold text-gray-900 text-left text-xs sm:text-sm md:text-base">PACKAGE</div>
+                  <div className="font-bold text-gray-900 text-right text-xs sm:text-sm md:text-base">PRICE</div>
                 </div>
-                <div className="space-y-2 sm:space-y-3">
-                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
+                <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm min-w-[240px]">
                     <div className="text-gray-700">Unlimited 2 hours</div>
-                    <div className="text-gray-900 font-semibold text-center">1.8 mio</div>
+                    <div className="text-gray-900 font-semibold text-right">1.8 mio</div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm min-w-[240px]">
                     <div className="text-gray-700">Unlimited 3 hours</div>
-                    <div className="text-gray-900 font-semibold text-center">2.0 mio</div>
+                    <div className="text-gray-900 font-semibold text-right">2.0 mio</div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm min-w-[240px]">
                     <div className="text-gray-700">Unlimited 4 hours</div>
-                    <div className="text-gray-900 font-semibold text-center">3.0 mio</div>
+                    <div className="text-gray-900 font-semibold text-right">3.0 mio</div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-xs sm:text-sm min-w-[240px]">
                     <div className="text-gray-700">Unlimited 5 hours</div>
-                    <div className="text-gray-900 font-semibold text-center">4.0 mio</div>
+                    <div className="text-gray-900 font-semibold text-right">4.0 mio</div>
                   </div>
                 </div>
               </div>
 
               {/* Include Package */}
-              <div className="mb-6">
-                <h3 className="font-bold text-gray-900 mb-3 sm:mb-4 text-base sm:text-lg">INCLUDE PACKAGE</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2">
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Mesin cetak DNP (High Speed)</span>
+              <div className="mb-4 sm:mb-6">
+                <h3 className="font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 text-sm sm:text-base md:text-lg">INCLUDE PACKAGE</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 sm:gap-x-4 md:gap-x-6 gap-y-1.5 sm:gap-y-2">
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Mesin cetak DNP (High Speed)</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Kualitas cetak foto yang tahan bertahun-tahun</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Kualitas cetak foto yang tahan bertahun-tahun</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Lighting studio</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Lighting studio</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Operator</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Operator</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Monitor touch screen 24'</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Monitor touch screen 24'</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Template custom</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Template custom</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Soft copy google drive</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Soft copy google drive</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Fun properties</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Fun properties</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Free gift boomerang</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Free gift boomerang</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Free QR code google drive</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Free QR code google drive</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Free frame</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Free frame</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Free transport Jakarta & Bekasi</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Free transport Jakarta & Bekasi</span>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-[#FF7A59] mt-1 flex-shrink-0">•</span>
-                    <span className="text-xs sm:text-sm text-gray-700">Free backdrop Maroon/Cream/Black</span>
+                  <div className="flex items-start gap-1.5 sm:gap-2">
+                    <span className="text-[#FF7A59] mt-0.5 sm:mt-1 flex-shrink-0 text-xs sm:text-base">•</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-gray-700">Free backdrop Maroon/Cream/Black</span>
                   </div>
                 </div>
               </div>
 
               {/* Book Now Button */}
-              <div className="text-center">
+              <div className="text-center px-2 sm:px-0">
                 <a
                   href="https://wa.me/6285285962272?text=Halo%20PhotochroMe%2C%20saya%20ingin%20booking%20photobooth"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#FF7A59] hover:bg-[#ff6544] text-white px-10 py-3 rounded-md font-medium transition shadow-md hover:shadow-lg"
+                  className="inline-block w-full sm:w-auto bg-[#FF7A59] hover:bg-[#ff6544] text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 rounded-md font-medium transition shadow-md hover:shadow-lg text-sm sm:text-base"
                 >
                   Book Now
                 </a>
